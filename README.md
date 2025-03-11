@@ -44,22 +44,9 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Run tests
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
 ## Process ENV:
 
 create .env file in root directory containing following variables for authorization purpose:
-JWT_SECRET=your_secret_key
-USER_EMAIL=admin@example.com
-USER_PASSWORD=asdfasdf
+<p>JWT_SECRET=your_secret_key</p>
+<p>USER_EMAIL=admin@example.com</p>
+<p>USER_PASSWORD=asdfasdf</p>
