@@ -27,17 +27,21 @@ export class TaskService {
   ) {
     try {
       const assignee: ObjectId[] = [];
-      assigneeId.forEach(async (id) => {
+      for (const id of assigneeId) {
         try {
-          const _id = new ObjectId(id);
           const member = await this.memberRepository.findOne({
-            where: { _id },
+            where: { _id: new ObjectId(id) },
           });
-          if (member) assignee.push(_id);
+
+          if (member) {
+            // console.log('mermeradfasdf');
+            assignee.push(new ObjectId(id));
+            // console.log(new ObjectId(id));
+          }
         } catch (err) {
-          //   console.log(err);
+          console.log(err);
         }
-      });
+      }
       const task = this.taskRepository.create({
         name,
         description,
